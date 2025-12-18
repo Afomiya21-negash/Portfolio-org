@@ -1,0 +1,234 @@
+@config "../tailwind.config.cjs";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Primary Teal */
+    --primary: 192 87% 18%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Surface Light Gray */
+    --background: 0 0% 95%;
+    --foreground: 222 47% 11%;
+    
+    /* Cards slightly lighter */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Secondary - muted teal */
+    --secondary: 192 30% 90%;
+    --secondary-foreground: 192 87% 18%;
+    
+    /* Muted surfaces */
+    --muted: 0 0% 90%;
+    --muted-foreground: 222 20% 40%;
+    
+    /* Accent Electric Lime */
+    --accent: 87 68% 48%;
+    --accent-foreground: 222 47% 11%;
+    
+    /* Accent 2 Purple */
+    --accent-purple: 255 100% 65%;
+    --accent-purple-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 192 87% 18%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(192 87% 18%) 0%, hsl(192 87% 28%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(87 68% 48%) 0%, hsl(87 68% 58%) 100%);
+    --gradient-purple: linear-gradient(135deg, hsl(255 100% 65%) 0%, hsl(255 80% 55%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 95%) 0%, hsl(192 30% 92%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(192 87% 18% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(192 87% 18% / 0.15);
+    --shadow-glow-accent: 0 0 40px hsl(87 68% 48% / 0.3);
+    --shadow-glow-purple: 0 0 40px hsl(255 100% 65% / 0.3);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 192 87% 18%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 192 87% 40%;
+  }
+
+  .dark {
+    --primary: 192 70% 50%;
+    --primary-foreground: 222 47% 11%;
+    
+    --background: 222 47% 6%;
+    --foreground: 0 0% 95%;
+    
+    --card: 222 47% 9%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 222 47% 9%;
+    --popover-foreground: 0 0% 95%;
+    
+    --secondary: 192 30% 15%;
+    --secondary-foreground: 192 70% 70%;
+    
+    --muted: 222 30% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 87 68% 48%;
+    --accent-foreground: 222 47% 11%;
+    
+    --accent-purple: 255 100% 70%;
+    --accent-purple-foreground: 222 47% 11%;
+    
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 192 70% 50%;
+    
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 192 70% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 30% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 222 30% 15%;
+    --sidebar-ring: 192 70% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+  
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-purple);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .glow-accent {
+    box-shadow: var(--shadow-glow-accent);
+  }
+  
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
