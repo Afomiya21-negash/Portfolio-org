@@ -42,10 +42,10 @@ export const AboutSection = () => {
           {/* Left Content */}
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I am a <span className="text-primary font-semibold">Senior Computer Science student</span> at 
-              St. Mary's University with a deep passion for learning and exploring new technologies. 
-              My journey in software development has equipped me with a diverse skill set spanning 
-              both frontend and backend development.
+              I am a <span className="text-primary font-semibold">Computer Science graduate</span> from St. Mary's University with 
+              a strong curiosity for how technology shapes the way people interact with the world.
+               My journey in software development has allowed me to explore both frontend and backend development, 
+               building solutions that are not only functional but meaningful.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Throughout my academic career, I've had the opportunity to work on various projects, 
@@ -55,9 +55,8 @@ export const AboutSection = () => {
               make a real difference.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, I'm constantly learning new frameworks, exploring design patterns, 
-              and staying up-to-date with the latest industry trends. I'm always eager to take on 
-              new challenges and grow as a developer.
+              When I'm not coding, I’m diving deeper into UI/UX design—learning Figma, exploring design systems, and studying how thoughtful design can elevate a product. 
+              I’m driven by the intersection of design and development, where creativity meets logic, and where great ideas become seamless user experiences.
             </p>
 
             {/* Quick Stats */}

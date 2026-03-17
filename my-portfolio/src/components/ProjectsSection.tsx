@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import thriveProject from "@/assets/thrive-project.jpg";
 import coffeeCup from "@/assets/coffee cup.jpg";
 import tourismProject from "@/assets/tourism-project.png";
+import shift from "@/assets/shift.jpg";
 
 const projects = [
   {
@@ -31,17 +32,30 @@ const projects = [
   },
   {
     title: "Tourism Platform",
-    subtitle: "Senior Year Project (In Progress)",
+    subtitle: "Senior Year Project",
     description:
       "An online tourism platform enabling users to browse and book tours. Features include user authentication, tour browsing, booking system with available cars and drivers (with ratings), and Chapa payment integration (test mode).",
     image: tourismProject,
     technologies: ["Next.js", "MySQL", "Chapa API", "Tailwind CSS"],
-    github: null,
+    github: "https://github.com/Afomiya21-negash/Tes-tour.git",
     live: null,
     isCollab: true,
     isInProgress: true,
     color: "purple",
   },
+  {
+    title: "Shift",
+    subtitle: "Team Member – Shift (Startup)",
+    description:
+      "Shift is an online job-matching platform designed to connect students with relevant opportunities based on their academic year and level of experience. The platform aims to bridge the gap between students and employers by providing tailored job listings that align with students’ skills, availability, and career stage.",
+    image: shift,
+    technologies: ["javascript", "firebase"],
+    github: null,
+    live: "https://shift-4evt.vercel.app",
+    isCollab: true,
+    isInProgress: true,
+    color: "primary",
+  }
 ];
 
 const getColorClasses = (color: string) => {
@@ -149,7 +163,7 @@ export const ProjectsSection = () => {
                   )}
                   {!project.github && !project.live && (
                     <span className="text-xs text-muted-foreground italic">
-                      Coming soon...
+                    
                     </span>
                   )}
                 </div>
