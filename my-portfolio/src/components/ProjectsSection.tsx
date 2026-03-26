@@ -4,6 +4,9 @@ import thriveProject from "@/assets/thrive-project.jpg";
 import coffeeCup from "@/assets/coffee cup.jpg";
 import tourismProject from "@/assets/tourism-project.png";
 import shift from "@/assets/shift.jpg";
+import coffee from "@/assets/hero image.jpg";
+import fitness from "@/assets/fitness 1.jpg";
+
 
 const projects = [
   {
@@ -55,7 +58,33 @@ const projects = [
     isCollab: true,
     isInProgress: true,
     color: "primary",
-  }
+  },
+  {
+    title: "Coffee Place Design",
+    subtitle: "UI/UX Website Prototype (Figma)",
+    description:
+      "A coffee shop website UI/UX concept with a clean browsing experience, menu cards, and a smooth flow for viewing details and placing orders.",
+    image: coffee,
+    technologies: ["UI/UX", "Figma"],
+    figma:
+      "https://www.figma.com/proto/RknacPUBX7gnS3p98nll9Q/Coffee-design?node-id=3-3&t=cVeBDISmWrC7VCy1-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1",
+    github: null,
+    live: null,
+    color: "accent",
+  },
+  {
+    title: "Fitness Mobile App",
+    subtitle: "UI/UX Mobile Prototype (Figma)",
+    description:
+      "A basic fitness mobile app UI/UX design focused on workout navigation, simple tracking, and easy access to routines and progress.",
+    image:fitness,
+    technologies: ["UI/UX", "Figma", "Mobile"],
+    figma:
+      "https://www.figma.com/proto/IgspwNnLt8TSWUEJCwli8b/fitness-app?node-id=1-3&p=f&t=07wAsrAB986zqMAX-1&scaling=scale-down&content-scaling=fixed&page-id=1%3A2",
+    github: null,
+    live: null,
+    color: "purple",
+  },
 ];
 
 const getColorClasses = (color: string) => {
@@ -161,10 +190,17 @@ export const ProjectsSection = () => {
                       </a>
                     </Button>
                   )}
-                  {!project.github && !project.live && (
-                    <span className="text-xs text-muted-foreground italic">
-                    
-                    </span>
+                  {project.figma && (
+                    <Button variant="outline" size="sm" asChild>
+                      <a
+                        href={project.figma}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink size={16} />
+                        Figma
+                      </a>
+                    </Button>
                   )}
                 </div>
               </div>
