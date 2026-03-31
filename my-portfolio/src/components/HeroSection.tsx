@@ -37,11 +37,11 @@ export const HeroSection = () => {
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up"
             style={{ animationDelay: "0.4s" }}
           >
-            A passionate developer,
+            A passionate developer/designer,
             
             building modern web applications with{" "}
-            <span className="text-accent font-semibold">React</span>,{" "}
-            <span className="text-accent-purple font-semibold">Next.js</span>, and more.
+            <span className="text-accent font-semibold">Next.js</span>,{" "}
+            <span className="text-accent-purple font-semibold">Figma</span>, and more.
           </p>
 
           {/* CTA Buttons */}
