@@ -63,7 +63,7 @@ const projects = [
     title: "Coffee Place Design",
     subtitle: "UI/UX Website Prototype (Figma)",
     description:
-      "A coffee shop website UI/UX concept with a clean browsing experience, and a smooth flow for viewing details and placing orders.",
+      "A coffee shop landing page UI/UX concept with a clean browsing experience, and a smooth flow for viewing details and placing orders.",
     image: coffee,
     technologies: ["UI/UX", "Figma"],
     figma:
