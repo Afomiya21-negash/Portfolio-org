@@ -26,7 +26,6 @@ const skillCategories = [
     color: "purple",
     skills: [
       { name: "MySQL", level: 75 },
-      { name: "PostgreSQL", level: 70 },
       { name: "Node.js", level: 70 },
       { name: "RESTful APIs", level: 80 },
     ],
