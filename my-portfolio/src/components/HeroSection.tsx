@@ -1,104 +1,75 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
+import { SectionLink } from "./SectionLink";
+
+const facts = [
+  { value: "UI/UX", label: "Design focus" },
+  { value: "CS", label: "Graduate, St. Mary's" },
+  { value: "3", label: "Featured civic products" },
+  { value: "ET", label: "Based in Addis Ababa" },
+];
 
 export const HeroSection = () => {
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero pt-20"
-    >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-      </div>
+    <section id="home" className="relative overflow-hidden pt-32 sm:pt-40 lg:pt-48">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
+          <div className="space-y-8">
+            <p className="animate-fade-in inline-flex items-center gap-2 text-sm font-medium text-accent">
+              <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
+              UI/UX Designer · Aspiring Product Designer
+            </p>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Greeting */}
-          <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            <span className="inline-block px-4 py-2 bg-accent/10 text-accent font-mono text-sm rounded-full mb-6">
-              👋 Hello, I'm
-            </span>
+            <h1 className="animate-slide-up max-w-3xl font-serif text-5xl leading-[1.08] tracking-tight text-foreground sm:text-6xl lg:text-[5.5rem]">
+              Designing thoughtful{" "}
+              <span className="text-accent">digital experiences.</span>
+            </h1>
+
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+              I'm Afomiya Mesfin. I enjoy designing intuitive, meaningful digital products that
+              combine creative thinking with a Computer Science background. I believe interfaces
+              should feel natural to use and solve real problems.
+            </p>
+
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <SectionLink
+                hash="work"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Explore My Work
+                <ArrowRight size={16} aria-hidden="true" />
+              </SectionLink>
+              <SectionLink
+                hash="contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+              >
+                Get in Touch
+              </SectionLink>
+            </div>
           </div>
 
-          {/* Name */}
-          <h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
-          >
-            <span className="text-gradient-primary">Afomiya</span>{" "}
-            <span className="text-foreground">Mesfin</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p 
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            A passionate developer/designer,
-            
-            building modern web applications with{" "}
-            <span className="text-accent font-semibold">Next.js</span>,{" "}
-            <span className="text-accent-purple font-semibold">Figma</span>, and more.
-          </p>
-
-          {/* CTA Buttons */}
-          <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-slide-up"
-            style={{ animationDelay: "0.6s" }}
-          >
-            <Button variant="hero" asChild>
-              <a href="#projects">View My Work</a>
-            </Button>
-            <Button variant="heroOutline" asChild>
-              <a href="#contact">Get In Touch</a>
-            </Button>
-          </div>
-
-          {/* Social Links */}
-          <div 
-            className="flex justify-center gap-4 animate-slide-up"
-            style={{ animationDelay: "0.8s" }}
-          >
-            <a
-              href="https://github.com/Afomiya21-negash"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-card rounded-full text-muted-foreground hover:text-primary hover:bg-secondary shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1"
-              aria-label="GitHub"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/afomiya-mesfin-8924b4317/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-card rounded-full text-muted-foreground hover:text-primary hover:bg-secondary shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a
-              href="mailto:afomiyamesfin@gmail.com"
-              className="p-3 bg-card rounded-full text-muted-foreground hover:text-primary hover:bg-secondary shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1"
-              aria-label="Email"
-            >
-              <Mail size={20} />
-            </a>
+          <div className="hidden lg:block">
+            <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border">
+              {facts.map((fact) => (
+                <div key={fact.label} className="bg-card p-6">
+                  <dt className="sr-only">{fact.label}</dt>
+                  <dd className="font-serif text-4xl text-foreground">{fact.value}</dd>
+                  <p className="mt-1 text-xs text-muted-foreground">{fact.label}</p>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-subtle">
-          <a
-            href="#about"
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <span className="text-xs font-medium">Scroll Down</span>
-            <ArrowDown size={20} />
-          </a>
+        <div className="mt-16 lg:hidden">
+          <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border">
+            {facts.map((fact) => (
+              <div key={fact.label} className="bg-card p-5">
+                <dt className="sr-only">{fact.label}</dt>
+                <dd className="font-serif text-3xl text-foreground">{fact.value}</dd>
+                <p className="mt-1 text-xs text-muted-foreground">{fact.label}</p>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

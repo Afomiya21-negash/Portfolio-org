@@ -1,81 +1,60 @@
-import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+
+const contacts = [
+  {
+    label: "Email",
+    value: "afomiyamesfin@gmail.com",
+    href: "mailto:afomiyamesfin@gmail.com",
+  },
+  {
+    label: "LinkedIn",
+    value: "Afomiya Mesfin",
+    href: "https://www.linkedin.com/in/afomiya-mesfin-8924b4317/",
+  },
+  {
+    label: "GitHub",
+    value: "Afomiya21-negash",
+    href: "https://github.com/Afomiya21-negash",
+  },
+];
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-card">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-accent/10 text-accent font-mono text-sm rounded-full mb-4">
-            Get In Touch
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Let's <span className="text-gradient-accent">Connect</span>
+    <section id="contact" className="scroll-mt-24 py-24 lg:py-32">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <div className="rounded-[2rem] bg-primary px-8 py-16 text-primary-foreground sm:px-14 sm:py-20">
+          <p className="text-sm uppercase tracking-[0.18em] text-primary-foreground/60">Contact</p>
+          <h2 className="mt-4 max-w-2xl font-serif text-4xl tracking-tight sm:text-6xl">
+            Have a project in mind?
           </h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
-        </div>
+          <p className="mt-6 max-w-lg text-primary-foreground/75 leading-relaxed">
+            I’m based in Addis Ababa and open to design conversations — internships, junior
+            UI/UX roles, and collaborations on civic or product work. Write whenever you’re
+            ready.
+          </p>
 
-        <div className="max-w-2xl mx-auto">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <div className="text-center">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                Let's work together!
-              </h3>
-              <p className="text-muted-foreground">
-                I'm always open to discussing new projects, creative ideas, or
-                opportunities to be part of your visions. Feel free to reach out!
-              </p>
-            </div>
-
-            {/* Contact Details */}
-            <div className="space-y-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            {contacts.map((item) => (
               <a
-                href="mailto:afomiyamesfin@gmail.com"
-                className="flex items-center gap-4 p-4 bg-background rounded-xl shadow-soft hover:shadow-card transition-all duration-300"
+                key={item.label}
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="group border-t border-primary-foreground/15 pt-5"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium text-foreground">afomiyamesfin@gmail.com</p>
-                </div>
+                <p className="text-xs uppercase tracking-[0.16em] text-primary-foreground/50">
+                  {item.label}
+                </p>
+                <p className="mt-2 inline-flex items-center gap-1 text-lg">
+                  {item.value}
+                  <ArrowUpRight
+                    size={16}
+                    className="opacity-0 transition-opacity group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
+                </p>
               </a>
-
-              <div className="flex items-center gap-4 p-4 bg-background rounded-xl shadow-soft hover:shadow-card transition-all duration-300">
-                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-accent" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium text-foreground">Addis Ababa, Ethiopia</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground mb-4">Find me on</p>
-              <div className="flex justify-center gap-3">
-                <a
-                  href="https://github.com/Afomiya21-negash"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-secondary shadow-soft hover:shadow-card transition-all duration-300"
-                >
-                  <Github size={20} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/afomiya-mesfin-8924b4317/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-background rounded-lg text-muted-foreground hover:text-primary hover:bg-secondary shadow-soft hover:shadow-card transition-all duration-300"
-                >
-                  <Linkedin size={20} />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

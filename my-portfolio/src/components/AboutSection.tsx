@@ -1,97 +1,56 @@
-import { Code2, Palette, Lightbulb, Users } from "lucide-react";
-
-const highlights = [
-  {
-    icon: Code2,
-    title: "Full Stack Development",
-    description: "Building end-to-end web applications with modern technologies",
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Creating intuitive and beautiful user interfaces with Figma",
-  },
-  {
-    icon: Lightbulb,
-    title: "Problem Solver",
-    description: "Passionate about finding elegant solutions to complex challenges",
-  },
-  {
-    icon: Users,
-    title: "Team Collaboration",
-    description: "Experienced in collaborative projects and agile development",
-  },
-];
-
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-20 lg:py-32 bg-card">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-primary/10 text-primary font-mono text-sm rounded-full mb-4">
-            About Me
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Who I <span className="text-gradient-primary">Am</span>
-          </h2>
-          <div className="w-24 h-1 bg-accent mx-auto rounded-full" />
+    <section id="about" className="scroll-mt-24 py-24 lg:py-32">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
+          <div>
+            <p className="text-sm uppercase tracking-[0.18em] text-accent">About</p>
+            <h2 className="mt-4 font-serif text-4xl tracking-tight text-foreground sm:text-5xl">
+              Creative thinking, with a technical spine.
+            </h2>
+          </div>
+          <div className="space-y-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p>
+              I enjoy turning ideas into thoughtful digital experiences. With a background in
+              Computer Science and a growing practice in UI/UX design, I bring together
+              creative thinking, structured problem-solving, and an understanding of how
+              digital products work. I’m interested in interfaces that look beautiful, feel
+              natural to use, and help people complete real tasks.
+            </p>
+            <p>
+              I am a <span className="text-foreground">Computer Science graduate</span> from
+              St. Mary’s University, with a strong curiosity for how technology shapes the way
+              people interact with the world. My path through software development — frontend
+              and backend — taught me to care about solutions that are not only functional,
+              but meaningful.
+            </p>
+            <p>
+              Throughout my academic career I have worked on desktop applications and
+              full-stack web products, including an internship at Efuye Gela. I still write
+              code when it helps me think, but the work I want to be known for is design:
+              Figma, design systems, and the craft of making a product easier to live with.
+            </p>
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I am a <span className="text-primary font-semibold">Computer Science graduate</span> from St. Mary's University with 
-              a strong curiosity for how technology shapes the way people interact with the world.
-               My journey in software development has allowed me to explore both frontend and backend development, 
-               building solutions that are not only functional but meaningful.
+        <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <article className="rounded-3xl border border-border bg-card p-7">
+            <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Education</p>
+            <h3 className="mt-4 font-serif text-2xl text-foreground">B.Sc. Computer Science</h3>
+            <p className="mt-2 text-sm text-muted-foreground">St. Mary’s University</p>
+          </article>
+          <article className="rounded-3xl border border-border bg-card p-7">
+            <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Experience</p>
+            <h3 className="mt-4 font-serif text-2xl text-foreground">Internship</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Efuye Gela — full-stack chat product (Buna Te’tu)
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Throughout my academic career, I've had the opportunity to work on various projects, 
-              from <span className="text-accent font-semibold">desktop applications</span> to 
-              <span className="text-accent-purple font-semibold"> full-stack web applications</span>. 
-              I believe in writing clean, maintainable code and creating user experiences that 
-              make a real difference.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              When I'm not coding, I’m diving deeper into UI/UX design—learning Figma, exploring design systems, and studying how thoughtful design can elevate a product. 
-              I’m driven by the intersection of design and development, where creativity meets logic, and where great ideas become seamless user experiences.
-            </p>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-6">
-              <div className="text-center p-4 bg-background rounded-xl shadow-soft">
-                <span className="block text-3xl font-bold text-primary">3+</span>
-                <span className="text-sm text-muted-foreground">Projects</span>
-              </div>
-              <div className="text-center p-4 bg-background rounded-xl shadow-soft">
-                <span className="block text-3xl font-bold text-accent">10+</span>
-                <span className="text-sm text-muted-foreground">Technologies</span>
-              </div>
-              <div className="text-center p-4 bg-background rounded-xl shadow-soft">
-                <span className="block text-3xl font-bold text-accent-purple">1+</span>
-                <span className="text-sm text-muted-foreground">Year Learning</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Content - Highlights */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {highlights.map((item, index) => (
-              <div
-                key={item.title}
-                className="p-6 bg-background rounded-xl shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1 group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent/10 transition-colors duration-300">
-                  <item.icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors duration-300" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
+          </article>
+          <article className="rounded-3xl border border-border bg-card p-7">
+            <p className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Based in</p>
+            <h3 className="mt-4 font-serif text-2xl text-foreground">Addis Ababa</h3>
+            <p className="mt-2 text-sm text-muted-foreground">Ethiopia</p>
+          </article>
         </div>
       </div>
     </section>

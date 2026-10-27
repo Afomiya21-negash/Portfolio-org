@@ -17,8 +17,9 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         accent: "bg-accent text-accent-foreground hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/20",
         purple: "bg-accent-purple text-accent-purple-foreground hover:bg-accent-purple/90 hover:shadow-lg hover:shadow-accent-purple/20",
-        hero: "bg-primary text-primary-foreground px-8 py-6 text-base hover:scale-105 hover:shadow-xl hover:shadow-primary/30 active:scale-100",
-        heroOutline: "border-2 border-primary bg-transparent text-primary px-8 py-6 text-base hover:bg-primary hover:text-primary-foreground hover:scale-105 active:scale-100",
+        hero: "bg-primary text-primary-foreground px-8 py-6 text-base rounded-full hover:bg-primary/90",
+        heroOutline: "border border-border bg-transparent text-foreground px-8 py-6 text-base rounded-full hover:bg-secondary",
+        pill: "bg-primary text-primary-foreground rounded-full hover:bg-primary/90",
         nav: "bg-transparent text-foreground hover:text-primary font-medium",
       },
       size: {

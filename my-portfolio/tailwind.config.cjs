@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Outfit", "ui-sans-serif", "system-ui"],
+        serif: ["Instrument Serif", "ui-serif", "Georgia", "serif"],
         mono: ["Space Mono", "ui-monospace", "SFMono-Regular"],
       },
       colors: {

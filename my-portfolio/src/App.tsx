@@ -4,9 +4,16 @@ import { TooltipProvider } from "./components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pagess/index";
+import CaseStudy from "./pagess/CaseStudy";
 import NotFound from "./pagess/NotFound";
+import { useHashScroll } from "./hooks/use-hash-scroll";
 
 const queryClient = new QueryClient();
+
+const RouteEffects = () => {
+  useHashScroll();
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -14,9 +21,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <RouteEffects />
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/work/:slug" element={<CaseStudy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
